@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator Matriks</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Kalkulator Matriks</h1>
+    <p>Operasi penjumlahan, pengurangan, dan perkalian matriks</p>
+  </header>
+
+  <main>
+    <section class="setup">
+      <h2>Pengaturan Matriks</h2>
+      <div class="settings-grid">
+        <div class="dimension-card">
+          <h3>Matrix A</h3>
+          <label>Baris A
+            <input type="number" id="rowsA" min="1" max="20" value="2">
+          </label>
+          <label>Kolom A
+            <input type="number" id="colsA" min="1" max="20" value="2">
+          </label>
+        </div>
+
+        <div class="operation-card">
+          <label for="operation">Operasi</label>
+          <select id="operation">
+            <option value="add">Penjumlahan (+)</option>
+            <option value="subtract">Pengurangan (−)</option>
+            <option value="multiply">Perkalian (×)</option>
+          </select>
+        </div>
+
+        <div class="dimension-card">
+          <h3>Matrix B</h3>
+          <label>Baris B
+            <input type="number" id="rowsB" min="1" max="20" value="2">
+          </label>
+          <label>Kolom B
+            <input type="number" id="colsB" min="1" max="20" value="2">
+          </label>
+        </div>
+      </div>
+      <div class="actions">
+        <button id="createMatrices">Buat Matrix</button>
+        <button id="calculate" disabled>Hitung</button>
+      </div>
+      <p id="message" role="status"></p>
+    </section>
+
+    <section class="workspace">
+      <div class="matrix-panel">
+        <h2>Matrix A</h2>
+        <p id="sizeA" class="matrix-size">Belum dibuat</p>
+        <div class="matrix-scroll"><div id="matrixA" class="matrix-grid"></div></div>
+      </div>
+
+      <div class="operator-symbol" id="operatorSymbol">+</div>
+
+      <div class="matrix-panel">
+        <h2>Matrix B</h2>
+        <p id="sizeB" class="matrix-size">Belum dibuat</p>
+        <div class="matrix-scroll"><div id="matrixB" class="matrix-grid"></div></div>
+      </div>
+
+      <div class="operator-symbol">=</div>
+
+      <div class="matrix-panel result-panel">
+        <h2>Matrix Hasil</h2>
+        <p id="sizeResult" class="matrix-size">Belum dihitung</p>
+        <div class="matrix-scroll"><div id="matrixResult" class="matrix-grid result-grid"></div></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
